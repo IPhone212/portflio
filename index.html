@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aymane - Portfolio</title>
+ <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="video/silver-surfer-space-stars-moewalls-com.mp4" type="video/mp4">
+    </video>
+
+    <nav class="top-menu">
+        <div class="logo nitro-text">aymane</div>
+        <div class="menu-links">
+            <a href="#" onclick="closeAbout()">Home</a>
+            <a href="javascript:void(0)" onclick="openAbout()">About</a> 
+            <a href="https://wa.me/212616672931" class="contact-btn">Contact Me</a>
+        </div>
+    </nav>
+
+    <div class="home-container">
+        <div class="glass-card">
+            <div class="profile-pic">
+                <img src="img/profile.jpg" alt="Aymane">
+            </div>
+            <h1 class="nitro-text" style="font-size: 40px;">aymane</h1>
+            <p style="color: #a1a1a1; margin-bottom: 20px;">@AYMANE.42A</p>
+            <p>Expert f Design ou Digital Art. Dima top level, dima n9i. Marhba bik f l'3alam dyali.</p>
+            <a href="javascript:void(0)" onclick="openAbout()" class="btn-main">See My Projects</a>
+        </div>
+    </div>
+
+    <div id="about-page" class="full-page-overlay">
+        <button onclick="closeAbout()" class="back-btn">← Home</button>
+        <h2 class="section-title">MY EXPERTISE & PROJECTS</h2>
+        
+        <div class="projects-grid">
+            <div class="work-card-reel">
+                <video autoplay muted loop playsinline class="bg-video-card"><source src="video/brand.mp4" type="video/mp4"></video>
+                <div class="gradient-overlay"></div>
+                <div class="work-info-overlay">
+                    <span class="category">Graphic Design</span>
+                    <h3>Branding</h3>
+                    <p>Logos pro u unique.</p>
+                </div>
+            </div>
+
+            <div class="work-card-reel">
+                <video autoplay muted loop playsinline class="bg-video-card"><source src="video/dev.mp4" type="video/mp4"></video>
+                <div class="gradient-overlay"></div>
+                <div class="work-info-overlay">
+                    <span class="category">Web Dev</span>
+                    <h3>Websites</h3>
+                    <p>Modern & Fast sites.</p>
+                </div>
+            </div>
+
+            <div class="work-card-reel">
+                <video autoplay muted loop playsinline class="bg-video-card"><source src="video/branding.mp4" type="video/mp4"></video>
+                <div class="gradient-overlay"></div>
+                <div class="work-info-overlay">
+                    <span class="category">Branding</span>
+                    <h3>Visual Identity</h3>
+                    <p>L'vibe dyal l'brand dyalk.</p>
+                </div>
+            </div>
+
+            <div class="work-card-reel">
+                <video autoplay muted loop playsinline class="bg-video-card"><source src="video/montage.mp4" type="video/mp4"></video>
+                    " type="video/mp4"></video>
+                <div class="gradient-overlay"></div>
+                <div class="work-info-overlay">
+                    <span class="category">Video Editing</span>
+                    <h3>VFX Montage</h3>
+                    <p>Cinematic transitions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="dock-container">
+    <div class="dock-glass">
+        <a href="https://wa.me/212616672931" target="_blank" class="dock-icon wa" data-label="WhatsApp">
+            <img src="img/whatsapp-svgrepo-com.svg" alt="WA">
+        </a>
+        <a href="https://www.instagram.com/AYMANE.42A" target="_blank" class="dock-icon ig" data-label="Instagram">
+            <img src="img/instagram-2016-logo-svgrepo-com.svg" alt="IG">
+        </a>
+        <a href="https://discord.gg/6mtHkhva" target="_blank" class="dock-icon dc" data-label="Discord">
+            <img src="img/discord-svgrepo-com.svg" alt="DC">
+        </a>
+    </div>
+</div>
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>
