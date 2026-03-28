@@ -1,0 +1,298 @@
+      /* --- FONTS --- */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Outfit:wght@300;400;600&display=swap');
+
+        /* --- BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: #0d1222;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        #bg-video {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -1; opacity: 0.6;
+        }
+
+        /* --- CUSTOM SCROLLBAR --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #8a34d2, #f0257c);
+            border-radius: 10px;
+        }
+
+        /* --- TOP MENU --- */
+        .top-menu {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 20px 50px; display: flex;
+            justify-content: space-between; align-items: center;
+            z-index: 100; background: rgba(13, 18, 34, 0.8);
+            backdrop-filter: blur(10px); border-bottom: 1px solid rgba(138, 52, 210, 0.2);
+        }
+
+        .menu-links a {
+            text-decoration: none; color: #fff; margin-left: 30px;
+            font-weight: 500; font-size: 14px; transition: 0.3s; text-transform: uppercase;
+        }
+        .menu-links a:hover { color: #a855f7; }
+        
+        .contact-btn {
+            background: #8a34d2; padding: 10px 25px; border-radius: 50px;
+            box-shadow: 0 0 15px rgba(138, 52, 210, 0.4);
+        }
+
+        /* --- NITRO TEXT --- */
+        @keyframes nitro-flow { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+        .nitro-text {
+            font-family: 'Playfair Display', serif !important; font-style: italic; font-weight: 700;
+            background: linear-gradient(120deg, #ffd600, #ff0100, #d800b9);
+            background-size: 200% auto; -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent; animation: nitro-flow 3s linear infinite;
+        }
+        .logo { font-size: 24px; text-transform: lowercase; }
+
+        /* --- HOME CARD --- */
+        .home-container {
+            height: 100vh; display: flex; justify-content: center; align-items: center;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
+            border-radius: 50px; border: 2px solid rgba(138, 52, 210, 0.4);
+            padding: 50px; text-align: center; max-width: 450px; width: 90%;
+            transition: 0.4s;
+        }
+        .profile-pic {
+            width: 120px; height: 120px; border-radius: 50%; overflow: hidden;
+            border: 4px solid #8a34d2; margin: 0 auto 20px;
+        }
+        .profile-pic img { width: 100%; height: 100%; object-fit: cover; }
+        .btn-main {
+            display: inline-block; padding: 15px 40px; border-radius: 50px;
+            background: linear-gradient(45deg, #f0257c, #8a34d2);
+            color: white; text-decoration: none; font-weight: bold; margin-top: 20px;
+        }
+
+        /* --- ABOUT OVERLAY --- */
+        .full-page-overlay {
+            position: fixed; top: 0; left: 100%; width: 100%; height: 100%;
+            background: #0d1222; z-index: 1000;
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+            overflow-y: auto; padding-top: 100px;
+        }
+        .full-page-overlay.active { transform: translateX(-100%); }
+        .section-title { font-size: 36px; text-align: center; margin-bottom: 50px; letter-spacing: 3px; }
+
+        /* --- GRID SYSTEM (3 per row on PC) --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+            justify-items: center;
+        }
+
+        .work-card-reel {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 9 / 16;
+            border-radius: 150px;
+            overflow: hidden;
+            border: 2px solid rgba(168, 85, 247, 0.4);
+            transition: 0.4s;
+        }
+        .work-card-reel:hover { transform: translateY(-15px); border-color: #f0257c; box-shadow: 0 0 30px rgba(138, 52, 210, 0.6); }
+
+        .bg-video-card {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: 1; border-radius: 150px;
+        }
+
+        .gradient-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 60%;
+            background: linear-gradient(to top, #0d1222 20%, transparent); z-index: 2;
+        }
+
+        .work-info-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 30px;
+            z-index: 3; text-align: center;
+        }
+        .category { color: #f0257c; font-weight: bold; font-size: 14px; text-transform: uppercase; }
+        .work-info-overlay h3 { font-size: 24px; margin: 10px 0; }
+        .work-info-overlay p { font-size: 14px; color: #ccc; line-height: 1.4; }
+
+        .back-btn {
+            position: absolute; top: 30px; left: 50px;
+            background: rgba(138, 52, 210, 0.2); border: 1px solid #8a34d2;
+            color: #fff; padding: 10px 25px; border-radius: 50px; cursor: pointer;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { 
+            .projects-grid { grid-template-columns: 1fr; }
+            .top-menu { padding: 15px 20px; }
+            .menu-links a { display: none; } /* Kay-khbi l'menu f tili bach mat-rwensh */
+            .menu-links a.contact-btn { display: inline-block; margin: 0; }
+        }
+        /* --- FLOATING TASKBAR (DOCK) --- */
+/* --- DOCK CONTAINER --- */
+.dock-container {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+}
+
+.dock-glass {
+    display: flex;
+    gap: 20px;
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.dock-icon {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dock-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+/* --- HOVER & COLORS --- */
+
+/* WhatsApp Glow */
+.dock-icon.wa:hover img {
+    filter: drop-shadow(0 0 15px #25D366);
+}
+
+/* Instagram Glow (Gradient style) */
+.dock-icon.ig:hover img {
+    filter: drop-shadow(0 0 15px #E1306C);
+}
+
+/* Discord Glow */
+.dock-icon.dc:hover img {
+    filter: drop-shadow(0 0 15px #5865F2);
+}
+
+/* General Hover Animation */
+.dock-icon:hover {
+    transform: translateY(-12px) scale(1.25);
+}
+
+/* Tooltip (L'ktiba li l'fo9) */
+.dock-icon::after {
+    content: attr(data-label);
+    position: absolute;
+    top: -45px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.dock-icon:hover::after {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dock-glass { gap: 15px; padding: 10px 18px; }
+    .dock-icon { width: 35px; height: 35px; }
+}
+/* Design dyal l-box li fiha l-3in f l-fo9 3la l-lyemmen */
+.eye-visitor-box {
+    position: absolute;
+    top: 30px;      /* Bo3d men l-fo9 */
+    right: 30px;    /* Bo3d men l-lyemmen */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 20;
+}
+
+/* Design d l-Sharingan */
+.sharingan-mini {
+    width: 25px;
+    height: 25px;
+    background: #ff0000;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px #ff0000;
+    animation: spinEye 4s linear infinite; /* Kat-dor */
+}
+
+.inner-eye {
+    width: 6px;
+    height: 6px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.tomoe {
+    width: 4px;
+    height: 4px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.tomoe:nth-child(1) { top: -8px; left: 1px; }
+.tomoe:nth-child(2) { bottom: -6px; left: -6px; }
+.tomoe:nth-child(3) { bottom: -6px; right: -6px; }
+
+@keyframes spinEye {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#count {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: #fff;
+    text-shadow: 0 0 5px #ff0000;
+}
